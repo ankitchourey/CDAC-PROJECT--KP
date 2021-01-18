@@ -1,0 +1,47 @@
+<div class="about-section"></div>
+<div class="alert alert-danger alertcard" role="alert" *ngIf="isFailure">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <span style=" font-size: 25px;"><strong> Could not update details: </strong>Please try again</span>
+              </div>
+    <div id="mydiv" class="container" fxLayoutAlign="start start">
+        <mat-card class="example-card"  style="text-align: center;">
+              <mat-card-title>Edit Details</mat-card-title>   
+            <mat-card-content>
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                  <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                    <input matInput placeholder="Name" 
+                    id="uname" 
+                    name="uname" 
+                    ngModel
+                    required>
+                    </mat-form-field><br>
+                    <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                        <input matInput placeholder="Username" 
+                        id="name" 
+                        name="name" 
+                        ngModel
+                        required>
+                        </mat-form-field><br>
+                        <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                            <input matInput placeholder="Email"
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            ngModel
+                            required>
+                            </mat-form-field><br>
+    
+                            <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                                <input matInput placeholder="Password" 
+                                type="password" 
+                                id="pwd" 
+                                name="pwd"
+                                ngModel
+                                required>
+                              </mat-form-field><br>
+    
+                            <br><button mat-raised-button color="primary">Edit</button>
+                </form>
+            </mat-card-content> 
+        </mat-card>
+    </div>

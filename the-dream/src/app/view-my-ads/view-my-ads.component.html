@@ -1,0 +1,44 @@
+<body>
+    <div class="about-section">
+        <div class="alert alert-info alert-dismissible" *ngIf="isSuccess">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>{{ msg }}</strong>
+          </div>
+        <h1>My Ads</h1>
+    </div>
+    <div class="container">      
+        <div *ngIf="show">
+            <h2>No data to show</h2>
+        </div>
+        <table class="table table-bordered table-responsive" *ngIf="flag">
+          <thead> 
+              <tr>
+          <th>Sr. No.</th>
+          <th>Company</th>
+          <th>Area</th>
+          <th>City</th>
+          <th>Pin</th>
+          <th>Contact</th>
+          <th>Category</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let ad of myAds; let i = index">
+           <td><strong>{{ i+1 }}</strong></td>
+           <td><strong>{{ ad.company }}</strong></td>
+           <td><strong>{{ ad.address.area }}</strong></td>
+           <td><strong>{{ ad.address.city }}</strong></td>
+           <td><strong>{{ ad.address.pinNo }}</strong></td>
+           <td><strong>{{ ad.contact }}</strong></td>
+           <td><strong>{{ ad.category }}</strong></td>
+           <td><button class="btn btn-primary" (click)="onEdit(ad.adv_id)">Edit</button></td>
+           <td><button class="btn btn-danger" (click)="onDelete(ad.adv_id)">Delete</button></td>
+           <td><button class="btn btn-success" (click)="getEnquiries(ad.adv_id)">Enquiries</button></td>
+           </tr>
+          </tbody>
+          </table>
+        </div>
+    </body>

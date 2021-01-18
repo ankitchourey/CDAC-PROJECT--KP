@@ -1,0 +1,72 @@
+<div >
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light navcol">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#"> <img src="assets/images/logo.png" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link fs" href="/home/dreamcatchers">HOME</a>
+              </li>
+              <div
+        appDropdown 
+        class="btn-group">
+            <button 
+            type="button" 
+            class="btn btn-lg dropdown-toggle btn-grad" data-toggle="dropdown" 
+            >SERVICES
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a (click)="navTo(category[0])" style="cursor: pointer;">Venue</a></li>
+            <li><a (click)="navTo(category[1])" style="cursor: pointer;">Photography</a></li>
+            <li><a (click)="navTo(category[2])" style="cursor: pointer;">Catering</a></li>
+            <li><a (click)="navTo(category[3])" style="cursor: pointer;">Clothing</a></li>
+            <li><a (click)="navTo(category[4])" style="cursor: pointer;">Make-up & Grooming</a></li>
+            <li><a (click)="navTo(category[5])" style="cursor: pointer;">Gifting</a></li>
+        </ul>
+        </div>
+              <li routerLinkActive="active" class="nav-item">
+                <a routerLink="/home/gallery" class="nav-link fs">GALLERY</a>
+              </li>
+              <li routerLinkActive="active" class="nav-item">
+                <a routerLink="/home/about" class="nav-link fs">ABOUT US</a>
+              </li>
+              <li routerLinkActive="active" class="nav-item">
+                <a routerLink="/home/feedback" class="nav-link fs">FEEDBACK</a>
+              </li>
+            </ul>
+            <div
+            appDropdown 
+            class="navbar-nav ml-auto btn-group">
+                <button 
+                type="button" 
+                class="btn btn-lg dropdown-toggle btn-grad" data-toggle="dropdown" 
+               ><span *ngIf="!isLoggedIn">Login/Register</span>
+                <span *ngIf="isLoggedIn">Profile</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu"  *ngIf="!isLoggedIn">
+                <li routerLinkActive="active"><a [routerLink]="['/home/login',id[0]]">ADMINISTRATOR</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/home/login',id[1]]">USER</a></li>
+            </ul>
+            <ul class="dropdown-menu"  *ngIf="isLoggedIn && !isAdmin">
+              <li routerLinkActive="active"><a (click)="editProf()" style="color:hotpink;font-size: 20px;">Edit Profile</a></li>
+              <li routerLinkActive="active"><a (click)="postAdv()" style="color:hotpink;font-size: 20px;">Post Ad</a></li>
+              <li routerLinkActive="active"><a (click)="viewAds()" style="color:hotpink;font-size: 20px;">View Ads</a></li>
+              <li routerLinkActive="active"><a (click)="logout()" style="color:hotpink;font-size: 20px;">Logout</a></li>
+          </ul>
+          <ul class="dropdown-menu"  *ngIf="isLoggedIn && isAdmin">
+            <li routerLinkActive="active"><a (click)="editProf()" style="color:hotpink;font-size: 20px;">Edit Profile</a></li>
+            <li routerLinkActive="active"><a (click)="viewFeedbacks()" style="color:hotpink;font-size: 20px;">Feedbacks</a></li>
+            <li routerLinkActive="active"><a (click)="logout()" style="color:hotpink;font-size: 20px;">Logout</a></li>
+        </ul>
+            </div>
+          </div>
+        </div>
+        </nav>
+    </div>
+ <router-outlet></router-outlet>
+    

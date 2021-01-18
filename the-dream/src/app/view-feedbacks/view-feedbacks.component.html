@@ -1,0 +1,32 @@
+ <body>
+     <div class="about-section">
+        <h1>Feedbacks</h1>
+    </div>
+    <div class="container">      
+        <div *ngIf="show">
+            <h2>No data to show</h2>
+        </div>
+        <table class="table table-bordered table-responsive" *ngIf="flag">
+          <thead> 
+              <tr>
+          <th>Sr. No.</th>
+          <th>Name</th>
+          <th>Contact</th>
+          <th>Email</th>
+          <th>Description</th>
+          <th>Rating</th>
+          </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let f of feedbacks; let i = index">
+           <td><strong>{{ i+1 }}</strong></td>
+           <td><strong>{{ f.name }}</strong></td>
+           <td><strong>{{ f.contactNo }}</strong></td>
+           <td><strong>{{ f.email }}</strong></td>
+           <td><strong>{{ f.description }}</strong></td>
+           <td><strong>{{ f.rating }}</strong></td>
+           </tr>
+          </tbody>
+          </table>
+        </div>
+    </body> 

@@ -1,0 +1,60 @@
+<div class="about-section">
+  <div class="alert alert-info alert-dismissible" *ngIf="isSuccess">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>{{ msg }}</strong>
+  </div>
+    <h1>Feedback</h1>
+  </div>
+    <div id="mydiv" class="container" fxLayoutAlign="start start">
+        <mat-card class="example-card"  style="text-align: center;">
+            <mat-card-content>
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                  <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                    <input matInput placeholder="Name" 
+                    id="uname" 
+                    name="uname" 
+                    ngModel
+                    required>
+                    </mat-form-field><br>
+                        <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                            <input matInput placeholder="Email"
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            ngModel
+                            required>
+                            </mat-form-field><br>
+                            <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                                <textarea matInput placeholder="Please write to us" 
+                                id="feedback" 
+                                name="feedback"
+                                ngModel
+                                required></textarea>
+                              </mat-form-field><br>
+                              <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                                <input matInput placeholder="Contact" 
+                                id="contact" 
+                                name="contact" 
+                                ngModel
+                                required>
+                                </mat-form-field><br>
+                                <br>
+                               
+                                    <div class="rating">
+                                        <legend style="text-align: center;">How is our service:</legend>
+                                      <input type="radio"  id="star5" name="rating" value="5" ngModel/><label for="star5" title="Rocks!" >5 stars</label>
+                                      <input type="radio" id="star4" name="rating" value="4" ngModel/><label for="star4" title="Pretty good" >4 stars</label>
+                                      <input type="radio" id="star3" name="rating" value="3" ngModel/><label for="star3" title="Okay-ish" >3 stars</label>
+                                      <input type="radio"  id="star2" name="rating" value="2" ngModel/><label for="star2" title="Kinda bad" >2 stars</label>
+                                      <input type="radio" id="star1" name="rating" value="1" ngModel/><label for="star1" title="Not satisfied" >1 star</label>
+                                    </div>
+                                
+                                <br><br><br><br>
+                            <mat-card-footer><button mat-raised-button color="primary" style="margin: 7px">Send</button>
+                                <button mat-raised-button color="accent" style="margin: 7px" (click)="onReset(f)">Reset</button>
+                                <button mat-raised-button color="warn"  style="margin: 7px" (click)="onCancel()">Cancel</button>
+                            </mat-card-footer>
+                </form>
+            </mat-card-content> 
+        </mat-card>
+    </div>

@@ -1,0 +1,30 @@
+<div class="about-section">
+  <h1>Upload Images</h1>
+</div>
+<div class="row">
+    
+    <div class="col-md-6">
+     <div class="jumbotron">
+        <form #formreg="ngForm" (ngSubmit)="onAdvertiseAdd(formreg)">
+            <div class="form-group">
+          <label for="my-input">Add Images (Tip: Add more photos to get noticed more)</label>
+        
+          <input style="padding-bottom: 8px;" (change)="onSelectFile1($event)" id="image1" class="form-control-file" type="file" name="image1">
+           <input style="padding-bottom: 8px;" (change)="onSelectFile2($event)" id="image2" class="form-control-file" type="file" name="image2">
+          <input style="padding-bottom: 8px;" (change)="onSelectFile3($event)" id="my-input3" class="form-control-file" type="file" name="image3">
+          <input style="padding-bottom: 8px;" (change)="onSelectFile4($event)" id="my-input4" class="form-control-file" type="file" name="image4">
+          <input style="padding-bottom: 8px;" (change)="onSelectFile5($event)" id="my-input4" class="form-control-file" type="file" name="image5">
+   
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-success">Upload</button>
+          <button routerLink="/home/dreamcatchers" class="btn btn-danger" style="margin-left: 10px;">Cancel</button>
+      </div>
+      </form>
+       
+  
+    <!-- <img [src]="image" width="100%" height="100%" alt="Image" />
+        <img src="{{img}}" width="100%" height="100%" alt="Image" >
+        </div> -->
+  </div>
+</div>

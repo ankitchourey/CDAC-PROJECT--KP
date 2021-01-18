@@ -1,0 +1,60 @@
+#mydiv {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -20em; /*set to a negative number 1/2 of your height*/
+    margin-left: -16em; /*set to a negative number 1/2 of your width*/
+}
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #550848;
+    color: white;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .alertcard{
+    text-align: center;
+}
+
+  h1{
+    color: rgb(162, 250, 253);
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: 80px;
+    font-weight: 900;
+}
+h2{
+  text-align: center;
+}
+table{
+  background-color: rgb(28, 206, 212); 
+  color: #550848;
+  display : table; 
+  font-size: 15px;
+}

@@ -1,0 +1,38 @@
+<body>
+    <div class="about-section">
+        <div class="alert alert-success alert-dismissible alertcard" *ngIf="isSuccess">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <span  style=" font-size: 20px;"><strong>Deleted the enquiry successfully</strong></span>
+          </div>
+          <div class="alert alert-danger alertcard" role="alert" *ngIf="isFailure">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <span style=" font-size: 25px;"><strong> Could not delete: </strong>Please try again</span>
+                      </div>
+        <h1>My Customers</h1>
+    </div>
+    <div class="container">      
+        <div *ngIf="show">
+            <h2>You have no enquiries yet</h2>
+        </div>
+        <table class="table table-bordered table-responsive" *ngIf="flag">
+          <thead> 
+              <tr>
+          <th>Sr. No.</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let enq of enquiries; let i = index">
+           <td><strong>{{ i+1 }}</strong></td>
+           <td><strong>{{ enq.name }}</strong></td>
+           <td><strong>{{ enq.email }}</strong></td>
+           <td><strong>{{ enq.mobileno }}</strong></td>
+           <td><button class="btn btn-danger" (click)="onDelete(enq.enq_id)">Delete</button></td>
+           </tr>
+          </tbody>
+          </table>
+        </div>
+    </body>

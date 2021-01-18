@@ -1,0 +1,41 @@
+<body>
+  <div class="alert alert-success alert-dismissible alertcard" *ngIf="isLoggedIn">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <span  style=" font-size: 20px;"><strong>Signed in successfully </strong>as {{ username }}</span>
+  </div>
+  <div class="alert alert-danger alertcard" role="alert" *ngIf="isLoginFailed">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <span style=" font-size: 25px;"><strong> Login failed: </strong>Please try logging in again</span>
+              </div>
+<div id="mydiv" class="container" fxLayoutAlign="start start">
+    <mat-card class="example-card"  style="text-align: center;">
+          <mat-card-title>{{ title }} Login</mat-card-title>   
+        <mat-card-content>
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                <input matInput placeholder="Username" 
+                id="name" 
+                name="name" 
+                ngModel
+                required>
+                </mat-form-field><br>
+
+                <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                    <input matInput placeholder="Password" 
+                    type="password" 
+                    id="pwd" 
+                    name="pwd"
+                    ngModel
+                    required>
+                  </mat-form-field><br>
+
+                <button mat-raised-button color="primary">Login</button>
+                <button mat-raised-button color="accent" (click)="onReset(f)">Reset</button>
+                <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+            </form>
+            <br/><span>____________Or____________</span>
+            <mat-card-footer><a [routerLink]="['/home/signup',title]">Register</a><span *ngIf="isUser"> to join our growing family!</span></mat-card-footer>
+        </mat-card-content> 
+    </mat-card>
+</div>
+</body>

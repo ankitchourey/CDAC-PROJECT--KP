@@ -1,0 +1,35 @@
+<body>
+<div class="about-section">
+    <div class="alert alert-info alert-dismissible" *ngIf="isSuccess">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>{{ msg }}</strong>
+      </div>
+    <h1>Services</h1>
+</div>
+<hr/>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-6" *ngFor="let v of advertise">
+            <div class="product-grid4">
+               <div class="product-image4">
+                <div *ngIf="enablePhoto">
+                        <img [src]="'data:image/gif;base64,'+v.photoList[0].image">
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">{{ v.company }}</a></h3>
+                  <div class="price">
+                        <!-- Starting from ₹{{ v.price }} -->
+                        {{v.address.area}}, {{ v.address.city }}-{{ v.address.pinNo }}
+                    </div> 
+                    <div class="price">
+                        <!-- Starting from ₹{{ v.price }} -->
+                        Mob:{{ v.contact }}
+                    </div> 
+                    <a class="viewing" style="cursor: pointer;" (click)="contactOrDelAdv(v.adv_id)">{{ bval }}</a>
+                </div>
+            </div>
+        </div>
+       </div>
+</div>
+</body>

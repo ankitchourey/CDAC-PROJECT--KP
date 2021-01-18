@@ -1,0 +1,42 @@
+<div class="about-section">
+    <div class="alert alert-info alert-dismissible" *ngIf="isSuccess">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>{{ msg }}</strong>
+      </div>
+    <h1>Get In Touch</h1>
+  </div>
+    <div id="mydiv" class="container" fxLayoutAlign="start start">
+        <mat-card class="example-card"  style="text-align: center;">
+            <mat-card-content>
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                  <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                    <input matInput placeholder="Your Name" 
+                    id="name" 
+                    name="name" 
+                    ngModel
+                    required>
+                    </mat-form-field><br>
+                        <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                            <input matInput placeholder="Mobile"
+                            id="mobile" 
+                            name="mobile" 
+                            ngModel
+                            required>
+                            </mat-form-field><br>
+                            <mat-form-field [style.fontSize.px]=20 class="example-full-width">
+                                <input matInput placeholder="Email"
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                ngModel
+                                required>
+                                </mat-form-field><br>
+                                <br><br><br><br>
+                            <mat-card-footer><button mat-raised-button color="primary" style="margin: 7px">Post</button>
+                                <button mat-raised-button color="accent" style="margin: 7px" (click)="onReset(f)">Reset</button>
+                                <button mat-raised-button color="warn"  style="margin: 7px" (click)="onCancel()">Cancel</button>
+                            </mat-card-footer>
+                </form>
+            </mat-card-content> 
+        </mat-card>
+    </div>

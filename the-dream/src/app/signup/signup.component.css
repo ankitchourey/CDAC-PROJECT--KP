@@ -1,0 +1,27 @@
+.example-card {
+    width: 400px;
+    height: 450px;
+    margin: 10% auto;
+  }
+  #mydiv {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -20em; /*set to a negative number 1/2 of your height*/
+    margin-left: -16em; /*set to a negative number 1/2 of your width*/
+    background-color: rgb(146, 21, 84);
+}
+button{
+    margin: 5px;
+    width: 90px;
+    font-size: 20px;
+}
+body{
+    background: rgb(158, 91, 196);
+    background: linear-gradient(90deg, rgb(77, 7, 61) 0%, rgb(207, 67, 172) 27%, rgb(116, 189, 231) 100%);
+}
+.alertcard{
+    text-align: center;
+}
